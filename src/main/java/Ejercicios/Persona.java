@@ -64,7 +64,7 @@ public class Persona {
         Scanner entrada = new Scanner(System.in);
 
         Persona persona = new Persona("Franco", "Armando", 22, 96107991);
-
+        persona.mostrarInformacion();
 
     }
 }
