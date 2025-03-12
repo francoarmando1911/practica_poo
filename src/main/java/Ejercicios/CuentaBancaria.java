@@ -2,10 +2,6 @@ package Ejercicios;
 
 import java.util.Scanner;
 
-/*
-Crear una clase cuenta bancaria con atributos nuevaCuenta, saldo y titular. Incluir metodos
-para depositary retirar dinero, asi como un metodo que muestre la informacion de la persona.
- */
 public class CuentaBancaria {
     private String nuevaCuenta;
     private double saldo;
@@ -29,10 +25,6 @@ public class CuentaBancaria {
         return saldo;
     }
 
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
-    }
-
     public String getTitular() {
         return titular;
     }
@@ -41,48 +33,50 @@ public class CuentaBancaria {
         this.titular = titular;
     }
 
-    //Metodos para depositar
-    public static double depositar(double saldo, double montoDepositar){
-        Scanner entrada = new Scanner(System.in);
-
-        double nuevoSaldo = 0;
-        System.out.println("Desea ingresar dinero (s/n)? ");
-        String respuesta = entrada.next();
-
-        if(respuesta.equals("n")){
-            System.out.println("Tarea finalizada.");
-        }else {
-            System.out.println("Ingrese el monto que desea depositar en su cuenta: ");
-            montoDepositar = entrada.nextDouble();
-            nuevoSaldo = (saldo + montoDepositar);
+    // Método para depositar dinero
+    public void depositar(double montoDepositar) {
+        if (montoDepositar > 0) {
+            saldo += montoDepositar;
+            System.out.println("Depósito exitoso. Nuevo saldo: $" + saldo);
+        } else {
+            System.out.println("El monto a depositar debe ser mayor a 0.");
         }
-        entrada.close();
-        return nuevoSaldo;
     }
 
-    //Funcion retirar dinero
-    public static double retirarDinero(double saldo, double montoRetirar){
-        Scanner entrada  = new Scanner(System.in);
-
-        double saldoRetirar = 0;
-        System.out.println("Desea retirar dinero de su cuenta bancaria (s/n): ");
-        String respuesta = entrada.next();
-
-        if(respuesta.equals("n")){
-            System.out.println("Tarea finalizada.");
+    // Método para retirar dinero
+    public void retirarDinero(double montoRetirar) {
+        if (montoRetirar > 0 && montoRetirar <= saldo) {
+            saldo -= montoRetirar;
+            System.out.println("Retiro exitoso. Nuevo saldo: $" + saldo);
         } else {
-            System.out.println("Ingrese el monto que desea retirar de su cuenta bancaria: ");
-            montoRetirar = (saldo - saldoRetirar);
+            System.out.println("Fondos insuficientes o monto inválido.");
         }
-        entrada.close();
-        return montoRetirar;
+    }
+
+    // Método para mostrar la información de la cuenta
+    public void mostrarInformacion() {
+        System.out.println("Titular: " + titular);
+        System.out.println("Número de Cuenta: " + nuevaCuenta);
+        System.out.println("Saldo: $" + saldo);
     }
 
     public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
         CuentaBancaria cuentaBancaria = new CuentaBancaria("12345", 50000, "Franco");
 
-        cuentaBancaria.depositar();
-        cuentaBancaria.retirarDinero();
+        cuentaBancaria.mostrarInformacion();
 
+        // Pedir al usuario que ingrese dinero
+        System.out.print("Ingrese el monto a depositar: ");
+        double montoDepositar = entrada.nextDouble();
+        cuentaBancaria.depositar(montoDepositar);
+
+        // Pedir al usuario que retire dinero
+        System.out.print("Ingrese el monto a retirar: ");
+        double montoRetirar = entrada.nextDouble();
+        cuentaBancaria.retirarDinero(montoRetirar);
+
+        cuentaBancaria.mostrarInformacion();
+        entrada.close();
     }
 }
