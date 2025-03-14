@@ -70,4 +70,27 @@ public class Planeta {
         }
         return masaKg / volumenKmCub;
     }
+
+    boolean esUnPlanetaExterior(){
+        float limite = (float) (149597870 * 3.4);
+
+        if(distanciaMediaSol > limite){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        Planeta p1 = new Planeta("Tierra",1,5.9736E24,1.08321E12,
+                12742,150000000,TipoPlaneta.TERRESTRE,true);
+        p1.verDatosPlaneta();
+        System.out.println("Densidad del planeta = " + p1.calcularDensidad());
+        System.out.println("Es planeta exterior = " + p1.esUnPlanetaExterior());
+        System.out.println();
+        Planeta p2 = new Planeta("Jupiter",79,1.899E27,1.4313E15,139820,750000000,TipoPlaneta.GASEOSO,true);
+        p2.verDatosPlaneta();
+        System.out.println("Densidad del planeta = " + p2.calcularDensidad());
+        System.out.println("Es planeta exterior = " + p2.esUnPlanetaExterior());
+    }
 }
