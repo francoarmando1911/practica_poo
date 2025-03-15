@@ -30,4 +30,18 @@ package Ejercicios;
  */
 
 public class Automovil {
+    private String marca;
+    private int anioFab = 0;
+    private float vol_lit_motor = 0;
+
+    //Enum tipo combustible
+    //Enum tipo automobil
+
+    private int num_asientos = 0;
+    private int num_puertas = 0;
+    private float vel_maxima = 0;
+
+    //Enum color
+
+    private float velocidad_actual = 0;
 }

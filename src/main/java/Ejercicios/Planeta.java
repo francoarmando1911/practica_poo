@@ -1,5 +1,5 @@
 package Ejercicios;
-/*
+/**
 Se requiere un programa que modele el concepto de un planeta del sistema
 solar. Un planeta tiene los siguientes atributos:
 
@@ -21,7 +21,7 @@ La clase debe incluir los siguientes métodos:
     2.1 y 3.4 UA. Una unidad astronómica (UA) es la distancia entre la Tierra y el Sol= 149597870 Km.
     - En un método main se deben crear dos planetas y mostrar los valores de sus atributos en pantalla. Además, se debe imprimir
     la densidad de cada planeta y si el planeta es un planeta exterior del sistema solar.
- */
+ **/
 public class Planeta {
     private String nombre;
     private int satelites;
