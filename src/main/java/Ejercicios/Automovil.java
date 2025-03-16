@@ -34,14 +34,102 @@ public class Automovil {
     private int anioFab = 0;
     private float vol_lit_motor = 0;
 
-    //Enum tipo combustible
-    //Enum tipo automobil
+    public enum TipoCombustible {
+        GASOLINA,
+        BIOETANOL,
+        DIESEL,
+        GASNATURAL
+    }
+
+    public enum TipoAutomovil{
+        CIUDAD,
+        SUBCOMPACTO,
+        COMPACTO,
+        FAMILIAR,
+        EJECUTIVO,
+        SUV
+    }
 
     private int num_asientos = 0;
     private int num_puertas = 0;
     private float vel_maxima = 0;
 
-    //Enum color
+    public enum Color{
+        BLANCO,
+        NEGRO,
+        ROJO,
+        NARANJA,
+        AMARILLO,
+        VERDE,
+        AZUL,
+        VIOLETA
+    }
 
     private float velocidad_actual = 0;
+
+    public Automovil(String marca, int anioFab, float vol_lit_motor, int num_asientos, int num_puertas, float vel_maxima, float velocidad_actual) {
+        this.marca = marca;
+        this.anioFab = anioFab;
+        this.vol_lit_motor = vol_lit_motor;
+        this.num_asientos = num_asientos;
+        this.num_puertas = num_puertas;
+        this.vel_maxima = vel_maxima;
+        this.velocidad_actual = velocidad_actual;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public int getAnioFab() {
+        return anioFab;
+    }
+
+    public void setAnioFab(int anioFab) {
+        this.anioFab = anioFab;
+    }
+
+    public float getVol_lit_motor() {
+        return vol_lit_motor;
+    }
+
+    public void setVol_lit_motor(float vol_lit_motor) {
+        this.vol_lit_motor = vol_lit_motor;
+    }
+
+    public int getNum_asientos() {
+        return num_asientos;
+    }
+
+    public void setNum_asientos(int num_asientos) {
+        this.num_asientos = num_asientos;
+    }
+
+    public int getNum_puertas() {
+        return num_puertas;
+    }
+
+    public void setNum_puertas(int num_puertas) {
+        this.num_puertas = num_puertas;
+    }
+
+    public float getVel_maxima() {
+        return vel_maxima;
+    }
+
+    public void setVel_maxima(float vel_maxima) {
+        this.vel_maxima = vel_maxima;
+    }
+
+    public float getVelocidad_actual() {
+        return velocidad_actual;
+    }
+
+    public void setVelocidad_actual(float velocidad_actual) {
+        this.velocidad_actual = velocidad_actual;
+    }
 }
