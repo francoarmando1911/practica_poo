@@ -1,5 +1,7 @@
 package Ejercicios;
 
+import java.util.Scanner;
+
 /**
  * Se requiere un programa que modele el concepto de un automóvil.
  * Un automóvil tiene los siguientes atributos:
@@ -140,7 +142,26 @@ public class Automovil {
      *   se debe mostrar por pantalla los mensajes correspondientes.
      */
 
+    public static float AcelerarVelocidad(float vel_maxima, float velocidad_actual, float aceleracion){
+        Scanner entrada = new Scanner(System.in);
 
+        vel_maxima = 0;
+        velocidad_actual = 0;
+        aceleracion = 0;
+
+        System.out.println("Ingrese la velocidad maxima: ");
+        vel_maxima = entrada.nextFloat();
+        System.out.println("Ingrese la velocidad actual: ");
+        velocidad_actual = entrada.nextFloat();
+        System.out.println("Ingrese cuantos kilometros mas desea acelerar: ");
+        aceleracion = entrada.nextFloat();
+
+        if(velocidad_actual > vel_maxima){
+            return aceleracion = 0;
+        } else{
+            return velocidad_actual + aceleracion;
+        }
+    }
 
 
 }
