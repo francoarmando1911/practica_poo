@@ -132,4 +132,15 @@ public class Automovil {
     public void setVelocidad_actual(float velocidad_actual) {
         this.velocidad_actual = velocidad_actual;
     }
+
+    /*
+     Métodos para acelerar una cierta velocidad, desacelerar y frenar (colocar la velocidad actual en cero).
+     *   Es importante tener en cuenta que no se debe acelerar más allá de la velocidad máxima permitida para el automóvil.
+     *   De igual manera, tampoco es posible desacelerar a una velocidad negativa. Si se cumplen estos casos,
+     *   se debe mostrar por pantalla los mensajes correspondientes.
+     */
+
+
+
+
 }
