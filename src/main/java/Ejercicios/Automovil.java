@@ -1,7 +1,5 @@
 package Ejercicios;
 
-import java.util.Scanner;
-
 /**
  * Se requiere un programa que modele el concepto de un automóvil.
  * Un automóvil tiene los siguientes atributos:
@@ -30,138 +28,138 @@ import java.util.Scanner;
  *   aumentar su velocidad en 20 km/h, luego decrementar su velocidad en 50 km/h, y después frenar.
  *   Con cada cambio de velocidad, se debe mostrar en pantalla la velocidad actual.
  */
-
 public class Automovil {
-    private String marca;
-    private int anioFab = 0;
-    private float vol_lit_motor = 0;
-
-    public enum TipoCombustible {
-        GASOLINA,
-        BIOETANOL,
-        DIESEL,
-        GASNATURAL
-    }
-
-    public enum TipoAutomovil{
-        CIUDAD,
-        SUBCOMPACTO,
-        COMPACTO,
-        FAMILIAR,
-        EJECUTIVO,
-        SUV
-    }
-
-    private int num_asientos = 0;
-    private int num_puertas = 0;
-    private float vel_maxima = 0;
-
-    public enum Color{
-        BLANCO,
-        NEGRO,
-        ROJO,
-        NARANJA,
-        AMARILLO,
-        VERDE,
-        AZUL,
-        VIOLETA
-    }
-
-    private float velocidad_actual = 0;
-
-    public Automovil(String marca, int anioFab, float vol_lit_motor, int num_asientos, int num_puertas, float vel_maxima, float velocidad_actual) {
-        this.marca = marca;
-        this.anioFab = anioFab;
-        this.vol_lit_motor = vol_lit_motor;
-        this.num_asientos = num_asientos;
-        this.num_puertas = num_puertas;
-        this.vel_maxima = vel_maxima;
-        this.velocidad_actual = velocidad_actual;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public int getAnioFab() {
-        return anioFab;
-    }
-
-    public void setAnioFab(int anioFab) {
-        this.anioFab = anioFab;
-    }
-
-    public float getVol_lit_motor() {
-        return vol_lit_motor;
-    }
-
-    public void setVol_lit_motor(float vol_lit_motor) {
-        this.vol_lit_motor = vol_lit_motor;
-    }
-
-    public int getNum_asientos() {
-        return num_asientos;
-    }
-
-    public void setNum_asientos(int num_asientos) {
-        this.num_asientos = num_asientos;
-    }
-
-    public int getNum_puertas() {
-        return num_puertas;
-    }
-
-    public void setNum_puertas(int num_puertas) {
-        this.num_puertas = num_puertas;
-    }
-
-    public float getVel_maxima() {
-        return vel_maxima;
-    }
-
-    public void setVel_maxima(float vel_maxima) {
-        this.vel_maxima = vel_maxima;
-    }
-
-    public float getVelocidad_actual() {
-        return velocidad_actual;
-    }
-
-    public void setVelocidad_actual(float velocidad_actual) {
-        this.velocidad_actual = velocidad_actual;
-    }
-
-    /*
-     Métodos para acelerar una cierta velocidad, desacelerar y frenar (colocar la velocidad actual en cero).
-     *   Es importante tener en cuenta que no se debe acelerar más allá de la velocidad máxima permitida para el automóvil.
-     *   De igual manera, tampoco es posible desacelerar a una velocidad negativa. Si se cumplen estos casos,
-     *   se debe mostrar por pantalla los mensajes correspondientes.
-     */
-
-    public static float AcelerarVelocidad(float vel_maxima, float velocidad_actual, float aceleracion){
-        Scanner entrada = new Scanner(System.in);
-
-        vel_maxima = 0;
-        velocidad_actual = 0;
-        aceleracion = 0;
-
-        System.out.println("Ingrese la velocidad maxima: ");
-        vel_maxima = entrada.nextFloat();
-        System.out.println("Ingrese la velocidad actual: ");
-        velocidad_actual = entrada.nextFloat();
-        System.out.println("Ingrese cuantos kilometros mas desea acelerar: ");
-        aceleracion = entrada.nextFloat();
-
-        if(velocidad_actual > vel_maxima){
-            return aceleracion = 0;
-        } else{
-            return velocidad_actual + aceleracion;
+        private String marca;
+        private int anioFab;
+        private float volLitMotor;
+        public enum TipoCombustible {
+            GASOLINA,
+            BIOETANOL,
+            DIESEL,
+            BIODIESEL,
+            GASNATURAL
+        }
+        public enum TipoAutomovil {
+            CIUDAD,
+            SUBCOMPACTO,
+            COMPACTO,
+            FAMILIAR,
+            EJECUTIVO,
+            SUV
+        }
+        private int numAsientos;
+        private int numPuertas;
+        private float velMaxima;
+        private float velocidadActual;
+        public enum Color {
+            BLANCO,
+            NEGRO,
+            ROJO,
+            NARANJA,
+            AMARILLO,
+            VERDE,
+            AZUL,
+            VIOLETA
+        }
+        public Automovil(String marca, int anioFab, float volLitMotor, int numAsientos, int numPuertas, float velMaxima) {
+            this.marca = marca;
+            this.anioFab = anioFab;
+            this.volLitMotor = volLitMotor;
+            this.numAsientos = numAsientos;
+            this.numPuertas = numPuertas;
+            this.velMaxima = velMaxima;
+            this.velocidadActual = 0;
+        }
+        public String getMarca() {
+            return marca;
+        }
+        public void setMarca(String marca) {
+            this.marca = marca;
+        }
+        public int getAnioFab() {
+            return anioFab;
+        }
+        public void setAnioFab(int anioFab) {
+            this.anioFab = anioFab;
+        }
+        public float getVolLitMotor() {
+            return volLitMotor;
+        }
+        public void setVolLitMotor(float volLitMotor) {
+            this.volLitMotor = volLitMotor;
+        }
+        public int getNumAsientos() {
+            return numAsientos;
+        }
+        public void setNumAsientos(int numAsientos) {
+            this.numAsientos = numAsientos;
+        }
+        public int getNumPuertas() {
+            return numPuertas;
+        }
+        public void setNumPuertas(int numPuertas) {
+            this.numPuertas = numPuertas;
+        }
+        public float getVelMaxima() {
+            return velMaxima;
+        }
+        public void setVelMaxima(float velMaxima) {
+            this.velMaxima = velMaxima;
+        }
+        public float getVelocidadActual() {
+            return velocidadActual;
+        }
+        public void setVelocidadActual(float velocidadActual) {
+            this.velocidadActual = velocidadActual;
+        }
+        // Métodos para acelerar, desacelerar y frenar
+        public void acelerar(float incremento) {
+            if (velocidadActual + incremento > velMaxima) {
+                System.out.println("No se puede acelerar más allá de la velocidad máxima de " + velMaxima + " km/h.");
+                velocidadActual = velMaxima;
+            } else {
+                velocidadActual += incremento;
+            }
+            System.out.println("La velocidad actual es: " + velocidadActual + " km/h.");
+        }
+        public void desacelerar(float decremento) {
+            if (velocidadActual - decremento < 0) {
+                System.out.println("No se puede desacelerar a una velocidad negativa.");
+                velocidadActual = 0;
+            } else {
+                velocidadActual -= decremento;
+            }
+            System.out.println("La velocidad actual es: " + velocidadActual + " km/h.");
+        }
+        public void frenar() {
+            velocidadActual = 0;
+            System.out.println("El vehículo ha frenado. Velocidad actual: " + velocidadActual + " km/h.");
+        }
+        // Método para calcular el tiempo estimado de llegada
+        public float tiempoEstimadoLlegada(float distancia) {
+            if (velocidadActual == 0) {
+                System.out.println("El vehículo está detenido. No se puede calcular el tiempo estimado de llegada.");
+                return Float.POSITIVE_INFINITY;
+            }
+            return distancia / velocidadActual;
+        }
+        // Método para mostrar los atributos del automóvil
+        public void mostrarDatos() {
+            System.out.println("Marca: " + marca);
+            System.out.println("Año de fabricación: " + anioFab);
+            System.out.println("Volumen del motor: " + volLitMotor + " litros");
+            System.out.println("Número de asientos: " + numAsientos);
+            System.out.println("Número de puertas: " + numPuertas);
+            System.out.println("Velocidad máxima: " + velMaxima + " km/h");
+            System.out.println("Velocidad actual: " + velocidadActual + " km/h");
+        }
+        public static void main(String[] args) {
+            Automovil auto = new Automovil("Toyota", 2020,1.8f, 5, 4, 180);
+            auto.setVelocidadActual(100);
+            auto.acelerar(20);
+            auto.desacelerar(50);
+            auto.frenar(); // Frenar
+            auto.mostrarDatos(); // Mostrar los atributos del automóvil
         }
     }
 
-
-}
