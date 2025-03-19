@@ -2,40 +2,18 @@ package Ejercicios;
 
 import java.util.Scanner;
 
-/**
- * Se requiere un programa que modele una cuenta bancaria que posee los siguientes atributos:
- * - Nombres del titular.
- * - Apellidos del titular.
- * - Número de la cuenta bancaria.
- * - Tipo de cuenta: puede ser una cuenta de ahorros o una cuenta corriente.
- * - Saldo de la cuenta.
- *
- * Se debe definir un constructor que inicialice los atributos de la clase.
- * Cuando se crea una cuenta bancaria, su saldo inicial tiene un valor de cero.
- *
- * En una determinada cuenta bancaria se puede:
- * - Imprimir por pantalla los valores de los atributos de una cuenta bancaria.
- * - Consultar el saldo de una cuenta bancaria.
- * - Consignar un determinado valor en la cuenta bancaria, actualizando el saldo correspondiente.
- * - Retirar un determinado valor de la cuenta bancaria, actualizando el saldo correspondiente.
- *   Es necesario tener en cuenta que no se puede realizar el retiro si el valor solicitado
- *   supera el saldo actual de la cuenta.
- **/
-
 public class Cuentabancaria2 {
-
     String nombre_titular;
     String apellido_titular;
     Double numero_cuentaBancaria;
     String tipo_cuentaBancaria; //Puede ser cuenta ahorro o cuenta corriente
     Double saldo_cuentaBancaria = 0.0;
 
-    public Cuentabancaria2(String nombre_titular, String apellido_titular, Double numero_cuentaBancaria, String tipo_cuentaBancaria, Double saldo_cuentaBancaria) {
+    public Cuentabancaria2(String nombre_titular, String apellido_titular, Double numero_cuentaBancaria, String tipo_cuentaBancaria) {
         this.nombre_titular = nombre_titular;
         this.apellido_titular = apellido_titular;
         this.numero_cuentaBancaria = numero_cuentaBancaria;
         this.tipo_cuentaBancaria = tipo_cuentaBancaria;
-        this.saldo_cuentaBancaria = saldo_cuentaBancaria;
     }
 
     public String getNombre_titular() {
@@ -78,8 +56,7 @@ public class Cuentabancaria2 {
         this.numero_cuentaBancaria = numero_cuentaBancaria;
     }
 
-    //Metodo para mostrar inforrmacion
-    public void mostrarInformacion(){
+    public void mostrarInformacion() {
         System.out.println("Nombre del titular: " + nombre_titular);
         System.out.println("Apellido del titular: " + apellido_titular);
         System.out.println("Numero de cuenta bancaria: " + numero_cuentaBancaria);
@@ -87,34 +64,81 @@ public class Cuentabancaria2 {
         System.out.println("Saldo del cuenta: " + saldo_cuentaBancaria);
     }
 
+    public double consultarSaldo() {
+        return saldo_cuentaBancaria;
+    }
+
+    public void consignarSaldo(double valor) {
+        saldo_cuentaBancaria += valor;
+        System.out.println("Se ha consignado: $" + valor);
+        System.out.println("Saldo actual: $" + saldo_cuentaBancaria);
+    }
+
+    public void retirarSaldo(double valor) {
+        if (valor <= saldo_cuentaBancaria) {
+            saldo_cuentaBancaria -= valor;
+            System.out.println("Se ha retirado: $" + valor);
+            System.out.println("Saldo actual: $" + saldo_cuentaBancaria);
+        } else {
+            System.out.println("Saldo insuficiente para realizar el retiro.");
+        }
+    }
+
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
 
         System.out.println("Ingrese el nombre del titular: ");
         String nombre_titular = entrada.nextLine();
+
         System.out.println("Ingrese el apellido del titular: ");
         String apellido_titular = entrada.nextLine();
+
         System.out.println("Ingrese el numero de cuenta bancaria: ");
         Double numero_cuentaBancaria = entrada.nextDouble();
+        entrada.nextLine();
+
         System.out.println("Ingrese el tipo de cuenta bancaria (ahorro - corriente): ");
         String tipo_cuentaBancaria = entrada.nextLine();
-        System.out.println("Ingrese el saldo del cuenta: ");
-        Double saldo_cuentaBancaria = entrada.nextDouble();
 
-        System.out.println("Desea consultar el saldo de su cuenta bancaria actualizado? ");
-        String consulta_saldo;
+        Cuentabancaria2 cuenta = new Cuentabancaria2(nombre_titular, apellido_titular, numero_cuentaBancaria, tipo_cuentaBancaria);
 
-        if(tipo_cuentaBancaria.equals("ahorro")) {
-            System.out.println("El tipo de cuenta bancaria es ahorro");
-        } else if (tipo_cuentaBancaria.equals("corriente")) {
-            System.out.println("El tipo de cuenta bancaria es corriente");
-        } else {
-            System.out.println("Valor de tipo de cueunta incorrecto");
+        boolean salir = false;
+
+        while (!salir) {
+            System.out.println("\nSeleccione una opción:");
+            System.out.println("1. Mostrar información de la cuenta");
+            System.out.println("2. Consultar saldo");
+            System.out.println("3. Consignar dinero");
+            System.out.println("4. Retirar dinero");
+            System.out.println("5. Salir");
+            int opcion = entrada.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    cuenta.mostrarInformacion();
+                    break;
+                case 2:
+                    System.out.println("Saldo actual: $" + cuenta.consultarSaldo());
+                    break;
+                case 3:
+                    System.out.println("Ingrese el valor a consignar: ");
+                    double valorConsignar = entrada.nextDouble();
+                    cuenta.consignarSaldo(valorConsignar);
+                    break;
+                case 4:
+                    System.out.println("Ingrese el valor a retirar: ");
+                    double valorRetirar = entrada.nextDouble();
+                    cuenta.retirarSaldo(valorRetirar);
+                    break;
+                case 5:
+                    salir = true;
+                    System.out.println("Gracias por usar el sistema.");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Intente de nuevo.");
+            }
         }
 
+        entrada.close();
     }
-
-
-
-
 }
