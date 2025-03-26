@@ -89,8 +89,6 @@ public class Pelicula {
         this.calificacion = calificacion;
     }
 
-    // Método imprimir para los valores de los productos
-
     /*Metodo privado esPeliculaEpica() devuelve un valor verdadero si la duración de la película es mayor o igual a tres horas,
     en caso contrario devuelve falso.*/
 
@@ -105,8 +103,26 @@ public class Pelicula {
         System.out.println("Calificacion de la pelicula: " + calificacion);
     }
 
+    private boolean esPeliculaEpica() {
+        return duracion_pelicula >= 180;
+    }
+
+    private String calcularValoracion() {
+        if (calificacion >= 9) {
+            return "Excelente";
+        } else if (calificacion >= 7) {
+            return "Buena";
+        } else if (calificacion >= 5) {
+            return "Regular";
+        } else {
+            return "Mala";
+        }
+    }
 
     public static void main(String[] args) {
-
+        Pelicula pelicula = new Pelicula("El señor de los anillos", "Peter Jackson", 2001, 180, 9.5);
+        pelicula.mostrarDatos();
+        System.out.println("Es pelicula epica: " + pelicula.esPeliculaEpica());
+        System.out.println("Valoracion: " + pelicula.calcularValoracion());
     }
 }
