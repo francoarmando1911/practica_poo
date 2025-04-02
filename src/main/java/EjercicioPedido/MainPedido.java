@@ -19,4 +19,16 @@ Implementar un método main que utilice los tres métodos sobrecar-
 gados en tres diferentes pedidos.
  **/
 public class MainPedido {
+    public static void main(String[] args) {
+        Pedido pedido = new Pedido("Fideos", 4000, "Pollo", 3500, "coca", 3000, "chocotorta", 2000);
+
+        double pedido1 = pedido.calcularPedido("Fideos", 4000, "coca", 3000);
+        System.out.println("El costo total del pedido 1 es: " + pedido1);
+
+        double pedido2 = pedido.calcularPedido("Fideos", 4000, "Pollo", 3500, "coca", 3000);
+        System.out.println("El costo total del pedido 2 es: " + pedido2);
+
+        double pedido3 = pedido.calcularPedido("Fideos", 4000, "Pollo", 3500, "coca", 3000, "chocotorta", 2000);
+        System.out.println("El costo total del pedido 3 es: " + pedido3);
+    }
 }
