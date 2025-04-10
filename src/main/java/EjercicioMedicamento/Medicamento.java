@@ -30,5 +30,37 @@ public class Medicamento {
             this.periodoTiempo = periodoTiempo;
             this.recomendaciones = recomendaciones;
         }
+
+        public String getUsuarios() {
+            return usuarios;
+        }
+
+        public void setUsuarios(String usuarios) {
+            this.usuarios = usuarios;
+        }
+
+        public double getDosisMiligramos() {
+            return dosisMiligramos;
+        }
+
+        public void setDosisMiligramos(double dosisMiligramos) {
+            this.dosisMiligramos = dosisMiligramos;
+        }
+
+        public String getPeriodoTiempo() {
+            return periodoTiempo;
+        }
+
+        public void setPeriodoTiempo(String periodoTiempo) {
+            this.periodoTiempo = periodoTiempo;
+        }
+
+        public String getRecomendaciones() {
+            return recomendaciones;
+        }
+
+        public void setRecomendaciones(String recomendaciones) {
+            this.recomendaciones = recomendaciones;
+        }
     }
 }
