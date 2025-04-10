@@ -19,6 +19,9 @@ public class Medicamento {
     private String viaAdministracionMedicamento;
 
     private class PsicologiaMedicamento {
-
+        private String usuarios;
+        private double dosisMiligramos;
+        private String periodoTiempo;
+        private String recomendaciones;
     }
 }
