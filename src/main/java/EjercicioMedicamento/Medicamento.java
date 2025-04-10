@@ -23,5 +23,12 @@ public class Medicamento {
         private double dosisMiligramos;
         private String periodoTiempo;
         private String recomendaciones;
+
+        public PsicologiaMedicamento(String usuarios, double dosisMiligramos, String periodoTiempo, String recomendaciones) {
+            this.usuarios = usuarios;
+            this.dosisMiligramos = dosisMiligramos;
+            this.periodoTiempo = periodoTiempo;
+            this.recomendaciones = recomendaciones;
+        }
     }
 }
