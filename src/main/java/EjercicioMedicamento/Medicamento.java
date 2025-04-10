@@ -14,4 +14,11 @@ u Periodo de tiempo para tomar el medicamento.
 u Recomendaciones.
  */
 public class Medicamento {
+    private String nombre_medicamento;
+    private String fabricante_medicamento;
+    private String via_administracion_medicamento;
+
+    class psicologiaMedicamento{
+        //Usuarios
+    }
 }
