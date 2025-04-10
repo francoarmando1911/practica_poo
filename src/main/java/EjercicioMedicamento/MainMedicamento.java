@@ -9,22 +9,20 @@ en pantalla los datos del medicamento y de su posología.
 public class   MainMedicamento {
     public static void main(String[] args) {
 
-        Medicamento medicamento = new Medicamento();
-        medicamento.setNombreMedicamento("Paracetamol");
-        medicamento.setFabricanteMedicamento("Laboratorios XYZ");
+        Medicamento medicamento = new Medicamento("Paracetamol", "Bayern", "Oral");
+        medicamento.setNombreMedicamento("Perifar grip");
+        medicamento.setFabricanteMedicamento("Perifar");
         medicamento.setViaAdministracionMedicamento("Oral");
 
         Medicamento.PsicologiaMedicamento posologia = medicamento.new PsicologiaMedicamento(
-                "Adultos", 500, "Cada 8 horas", "Tomar con agua"
+                "Adultos", 600, "Cada 8 horas", "Tomar con agua"
         );
 
-        // Mostrar los datos del medicamento
         System.out.println("Medicamento:");
         System.out.println("Nombre: " + medicamento.getNombreMedicamento());
         System.out.println("Fabricante: " + medicamento.getFabricanteMedicamento());
         System.out.println("Vía de administración: " + medicamento.getViaAdministracionMedicamento());
 
-        // Mostrar los datos de la posología
         System.out.println("\nPosología:");
         System.out.println("Usuarios: " + posologia.getUsuarios());
         System.out.println("Dosis: " + posologia.getDosisMiligramos() + " mg");
