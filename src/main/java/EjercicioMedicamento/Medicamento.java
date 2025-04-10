@@ -18,7 +18,37 @@ public class Medicamento {
     private String fabricanteMedicamento;
     private String viaAdministracionMedicamento;
 
-    private class PsicologiaMedicamento {
+    public Medicamento(String nombreMedicamento, String fabricanteMedicamento, String viaAdministracionMedicamento) {
+        this.nombreMedicamento = nombreMedicamento;
+        this.fabricanteMedicamento = fabricanteMedicamento;
+        this.viaAdministracionMedicamento = viaAdministracionMedicamento;
+    }
+
+    public String getNombreMedicamento() {
+        return nombreMedicamento;
+    }
+
+    public void setNombreMedicamento(String nombreMedicamento) {
+        this.nombreMedicamento = nombreMedicamento;
+    }
+
+    public String getFabricanteMedicamento() {
+        return fabricanteMedicamento;
+    }
+
+    public void setFabricanteMedicamento(String fabricanteMedicamento) {
+        this.fabricanteMedicamento = fabricanteMedicamento;
+    }
+
+    public String getViaAdministracionMedicamento() {
+        return viaAdministracionMedicamento;
+    }
+
+    public void setViaAdministracionMedicamento(String viaAdministracionMedicamento) {
+        this.viaAdministracionMedicamento = viaAdministracionMedicamento;
+    }
+
+    class PsicologiaMedicamento {
         private String usuarios;
         private double dosisMiligramos;
         private String periodoTiempo;
