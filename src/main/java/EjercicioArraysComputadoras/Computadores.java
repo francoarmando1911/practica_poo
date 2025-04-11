@@ -10,4 +10,57 @@ u Precio del computador.
  */
 
 public class Computadores {
+    private String marcaComputador;
+    private double cantidadMemoria;
+    private String caracteristicaProcesador;
+    private String sistemaOperativo;
+    private double precioComputador;
+
+    public Computadores(String marcaComputador, double cantidadMemoria, String caracteristicaProcesador, String sistemaOperativo, double precioComputador) {
+        this.marcaComputador = marcaComputador;
+        this.cantidadMemoria = cantidadMemoria;
+        this.caracteristicaProcesador = caracteristicaProcesador;
+        this.sistemaOperativo = sistemaOperativo;
+        this.precioComputador = precioComputador;
+    }
+
+    public String getMarcaComputador() {
+        return marcaComputador;
+    }
+
+    public void setMarcaComputador(String marcaComputador) {
+        this.marcaComputador = marcaComputador;
+    }
+
+    public double getCantidadMemoria() {
+        return cantidadMemoria;
+    }
+
+    public void setCantidadMemoria(double cantidadMemoria) {
+        this.cantidadMemoria = cantidadMemoria;
+    }
+
+    public String getCaracteristicaProcesador() {
+        return caracteristicaProcesador;
+    }
+
+    public void setCaracteristicaProcesador(String caracteristicaProcesador) {
+        this.caracteristicaProcesador = caracteristicaProcesador;
+    }
+
+    public String getSistemaOperativo() {
+        return sistemaOperativo;
+    }
+
+    public void setSistemaOperativo(String sistemaOperativo) {
+        this.sistemaOperativo = sistemaOperativo;
+    }
+
+    public double getPrecioComputador() {
+        return precioComputador;
+    }
+
+    public void setPrecioComputador(double precioComputador) {
+        this.precioComputador = precioComputador;
+    }
 }
