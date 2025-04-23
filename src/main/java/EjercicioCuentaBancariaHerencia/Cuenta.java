@@ -8,12 +8,9 @@ public class Cuenta {
     private float tasaAnual;
     private float comisionMensual = 0;
 
-    public Cuenta(float saldo, float tasaAnual, int numeroConsignaciones, int numeroRetiros, float comisionMensual) {
+    public Cuenta(float saldo, float tasaAnual) {
         this.saldo = saldo;
         this.tasaAnual = tasaAnual;
-        this.numeroConsignaciones = numeroConsignaciones;
-        this.numeroRetiros = numeroRetiros;
-        this.comisionMensual = comisionMensual;
     }
 
     public float getSaldo() {
@@ -55,4 +52,9 @@ public class Cuenta {
     public void setComisionMensual(float comisionMensual) {
         this.comisionMensual = comisionMensual;
     }
+
+    //metodo consignar(float cantidad)
+    //metodo retirar(float cantidad)
+    //metodo calcularInteres()
+    //metodo extractoMensual()
 }
