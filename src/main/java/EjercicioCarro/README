@@ -1,0 +1,18 @@
+Un carro está compuesto por un motor, un chasis, cuatro llantas y una
+carrocería.
+u Los motores tienen un atributo para representan el volumen del
+motor en litros.
+u El chasis tiene un atributo, el tipo de chasis, que es un valor enu-
+merado con valores Independiente o Monocasco.
+u La carrocería tiene un atributo que representa el tipo de carrocería,
+enumerado con valores Independiente, Autoportante o Tubular y
+un color (tipo String).
+u Las llantas tienen atributos como: marca (tipo String); diámetro del
+rin, altura y anchura (los últimos tres son tipo int).
+Cada parte de un carro tiene su correspondiente constructor y un
+método imprimir que muestra los valores de sus atributos en pantalla.
+Se requiere en una clase de prueba, desarrollar un método main que
+cree un carro con un motor de 2 litros, un chasis monocasco, una carro-
+cería de color rojo y tipo tubular, 4 llantas de marca “Goodyear”, diámetro
+del rin de 25 pulgadas, altura de 20 pulgadas y anchura de 15 pulgadas.
+Luego, se deben imprimir los datos del carro en pantalla.
