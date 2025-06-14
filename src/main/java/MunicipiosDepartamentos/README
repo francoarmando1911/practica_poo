@@ -1,0 +1,26 @@
+La gobernación de un departamento desea gestionar la información sobre
+sus municipios. Las gobernaciones tienen un nombre que representa el
+departamento al que pertenecen. Así, se requiere desarrollar un programa
+que implemente las siguientes funcionalidades:
+
+u Constructor de la clase Departamento.
+u Métodos get y set para el atributo nombre del departamento.
+u Agregar un municipio a lista de municipios de un departamento.
+
+Los datos de un municipio son: nombre del municipio, población
+total del municipio, temperatura media del municipio y altitud
+sobre el nivel del mar.
+
+u Eliminar un municipio de la lista de municipios de la gobernación
+del departamento.
+u Buscar un municipio en la lista de municipios del departamento.
+Si lo encuentra muestra en pantalla los datos del municipio. De lo
+contrario, se muestra el mensaje correspondiente.
+u Consultar si dada una población especí!ca, existen municipios
+con una población mayor o igual a un valor dado: si existen mu-
+nicipios que cumplen dicha condición, se muestra en pantalla el
+nombre de municipio. Si no encuentra municipios que cumplan
+el criterio de búsqueda se mostrará el mensaje correspondiente.
+u Cálculo del censo del departamento: calcular y mostrar en pantalla
+el total de población del departamento sumando las poblaciones
+de cada municipio.
