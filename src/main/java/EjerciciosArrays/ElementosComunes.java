@@ -6,4 +6,7 @@ arrays de enteros.
  */
 
 public class ElementosComunes {
+    public static void main(String[] args) {
+
+    }
 }
